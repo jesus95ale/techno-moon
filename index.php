@@ -61,7 +61,7 @@ if (
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="description" content="Techno-Moon - Servicios de TI y telecomunicaciones para empresas, incluyendo redes, cableado estructurado y soporte técnico.">
-	<meta name="keywords" content="Techno-Moon, TI, telecomunicaciones, soporte técnico, redes, cableado estructurado">
+	<link rel="canonical" href="https://techno-moon.com<?= htmlspecialchars($_SERVER['REQUEST_URI']) ?>">
 	<meta name="author" content="Techno-Moon">
 	<meta property="og:title" content="Techno-Moon - Soluciones en TI y Telecomunicaciones">
 	<meta property="og:description" content="Redes, cableado estructurado y soporte técnico para empresas.">
