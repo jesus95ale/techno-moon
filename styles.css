@@ -1,0 +1,1049 @@
+/* Estilos Generales */
+:root {
+    --color-primario: #669999; /* Cambia a tu color primario */
+    --color-secundario: #333333; /* Cambia a tu color secundario */
+	--color-fondo: #F2F2F2; /* cambia el color de fondo de las secciones*/
+	--color-hover: #336666; /* pasar por el cursor sobre el boton*/
+	--color-advertencia: #FF6600; /* mensajes de advertencia alertas */
+}
+
+* {
+    margin: 0; /* Elimina márgenes por defecto de todos los elementos */
+    padding: 0; /* Elimina rellenos por defecto de todos los elementos */
+    box-sizing: border-box; /* Incluye padding y border en el ancho y alto total de los elementos */
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Fuente utilizada para el cuerpo del documento */
+    color: var(--color-secundario); /* Color del texto general */
+    line-height: 1.6; /* Altura de línea para mejorar la legibilidad del texto */
+    background-color: var(--color-fondo); /* Color de fondo general */
+	
+}
+
+
+
+/* Contenedor de partículas */
+#particles-js {
+    position: absolute; /* Posicionamiento absoluto para que cubra todo el área disponible */
+    width: 100%; /* Ancho completo del contenedor de partículas */
+    height: 100%; /* Alto completo del contenedor de partículas */
+    top: 0; /* Alinea el contenedor en la parte superior */
+    left: 0; /* Alinea el contenedor a la izquierda */
+    z-index: 0; /* Mantiene las partículas detrás de otros elementos */
+    background-color: #000; /* Fondo negro para el contenedor de partículas */
+}
+
+.main-header {
+    position: relative; /* Posicionamiento relativo para que los elementos hijos se posicionen respecto a él */
+    height: 100vh; /* Altura de la ventana del navegador (100% de la altura de la vista) */
+    display: flex; /* Usar flexbox para alinear los elementos dentro del encabezado */
+    flex-direction: column; /* Dispone los elementos en una columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    color: white; /* Color del texto en el encabezado */
+    text-align: center; /* Alinea el texto al centro */
+    overflow: hidden; /* Evita que las partículas se salgan del área del encabezado */
+    padding: 10px 20px; /* Espaciado interno del encabezado */
+}
+
+.main-header1 {
+    position: relative; /* Posicionamiento relativo para que los elementos hijos se posicionen respecto a él */
+    height: 40vh; /* Altura de la ventana del navegador (100% de la altura de la vista) */
+    display: flex; /* Usar flexbox para alinear los elementos dentro del encabezado */
+    flex-direction: column; /* Dispone los elementos en una columna */
+    justify-content: center; /* Centra los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    color: white; /* Color del texto en el encabezado */
+    text-align: center; /* Alinea el texto al centro */
+    overflow: hidden; /* Evita que las partículas se salgan del área del encabezado */
+    padding: 10px 20px; /* Espaciado interno del encabezado */
+} 
+
+.header-content {
+    z-index: 1; /* Asegura que el contenido esté delante de las partículas en el fondo */
+}
+
+.navbar {
+    position: absolute; /* Posicionamiento absoluto para mantener el navbar en la parte superior */
+    top: 0; /* Alinea el navbar en la parte superior de la página */
+    width: 100%; /* Ancho completo del navbar */
+    padding: 20px 40px; /* Espaciado interno del navbar */
+    display: flex; /* Usar flexbox para la disposición de los elementos del navbar */
+    justify-content: space-between; /* Espacio entre los elementos del navbar */
+    align-items: center; /* Centra los elementos del navbar verticalmente */
+}
+
+
+
+
+/* Estilo del logo */
+.logo {
+    display: flex; /* Utiliza flexbox para alinear el logo y otros elementos en línea */
+    align-items: center; /* Centra verticalmente los elementos dentro del logo */
+}
+
+.logo-img {
+    width: 120px; /* Ajusta el tamaño del logo según tu preferencia */
+    height: auto; /* Mantiene la proporción del logo (evita distorsiones) */
+    transition: transform 0.3s; /* Suaviza el efecto de transformación durante 0.3 segundos */
+}
+
+.logo-img:hover {
+    transform: scale(1.05); /* Aumenta el tamaño del logo al pasar el ratón por encima */
+}
+
+
+
+/* Links de navegación */
+.nav-links {
+    list-style: none; /* Elimina el estilo de lista por defecto (viñetas) */
+    display: flex; /* Utiliza flexbox para disponer los enlaces en una fila */
+    gap: 20px; /* Espacio entre los enlaces */
+}
+
+.nav-links.active {
+    display: flex; /* Muestra el menú en flex cuando está activo */
+    flex-direction: column; /* Alinea los elementos verticalmente cuando está activo */
+}
+
+/* Cuando la clase active se añade, muestra el menú */
+.nav-links.active {
+    display: flex; /* Muestra el menú en flex */
+    flex-direction: column; /* Alinea verticalmente los elementos */
+    position: absolute; /* Posiciona el menú de forma absoluta para desplegarlo */
+    top: 60px; /* Ajusta la posición vertical del menú, bajo el navbar */
+    right: 20px; /* Alinea el menú a la derecha */
+    background-color: var(--color-secundario); /* Color de fondo del menú desplegable */
+    padding: 10px; /* Espaciado interno del menú */
+    border-radius: 5px; /* Bordes redondeados del menú */
+    z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+}
+
+.nav-links li {
+    margin: 0 10px; /* Espaciado horizontal entre los elementos de la lista */
+}
+
+.nav-links a {
+    color: white; /* Color del texto de los enlaces */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-weight: bold; /* Hace que el texto del enlace sea negrita */
+}
+
+/* Menú móvil */
+.mobile-menu {
+    display: none; /* Oculta el menú móvil por defecto */
+    color: white; /* Color del icono del menú móvil */
+    font-size: 2rem; /* Tamaño de la fuente para el icono del menú móvil */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el icono del menú móvil */
+}
+
+/* Botón principal */
+.btn {
+    background-color: var(--color-primario); /* Color de fondo del botón (azul claro) */
+    padding: 12px 30px; /* Espaciado interno (vertical y horizontal) del botón */
+    color: var(--color-secundario); /* Color del texto del botón */
+    text-decoration: none; /* Elimina el subrayado en el texto del botón */
+    border-radius: 5px; /* Bordes redondeados para suavizar la apariencia del botón */
+    font-size: 1rem; /* Tamaño de la fuente del texto en el botón */
+    margin-top: 20px; /* Espacio superior ajustado entre el botón y el contenido anterior */
+    transition: background-color 0.3s, transform 0.3s; /* Suaviza la transición del color y la transformación en hover */
+}
+
+.btn:hover {
+    background-color: var(--color-hover); /* Cambia a un azul más oscuro al pasar el ratón por encima */
+    transform: translateY(-2px); /* Efecto de elevación al pasar el ratón (desplazamiento hacia arriba) */
+}
+
+
+/* Estilo Moderno y Minimalista para Títulos */
+h2 {
+    font-family: 'Montserrat', sans-serif; /* Fuente moderna y popular */
+    font-size: 2.4rem; /* Tamaño impactante pero sin exagerar */
+    font-weight: 700; /* Negrita fuerte para impacto */
+    color: var(--color-primario); /* Azul oscuro elegante */
+    text-transform: uppercase; /* Letras mayúsculas para un look sofisticado */
+    letter-spacing: 1.5px; /* Espaciado amplio para claridad */
+    text-align: center; /* Centrado para estética */
+    position: relative;
+    margin-bottom: 40px; /* Espacio generoso debajo del título */
+    animation: fadeIn 1s ease-in-out; /* Animación de entrada suave */
+	color:var(--color-primario);
+}
+
+/* Subrayado dinámico como barra central */
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0; /* Inicialmente oculta */
+    height: 4px;
+    background: linear-gradient(90deg, #333333, #669999); /* Degradado moderno */
+    border-radius: 2px; /* Esquinas suaves */
+    transition: width 0.5s ease; /* Transición suave */
+	
+}
+
+/* Efecto de hover: barra se despliega */
+h2:hover::after {
+    width: 80%; /* La barra crece al 80% del ancho del título */
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+/* Estilo general para las secciones */
+section {
+    padding: 60px 20px; /* Espaciado interno (vertical y horizontal) para las secciones */
+    margin-bottom: 20px; /* Espacio inferior entre secciones para evitar amontonamiento */
+    border-radius: 10px; /* Bordes redondeados para suavizar la apariencia de las secciones */
+}
+
+
+
+/* Sección Sobre Nosotros */
+.about-section {
+    background-color: #FFFFFF;
+    padding: 60px 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    margin: 40px auto;
+    max-width: 1200px; /* Limita el ancho para evitar espacios laterales grandes */
+    text-align: center;
+}
+.about-section::before{
+			content: ""; /* Elemento vacío para mostrar la imagen */
+            position: absolute; /* Permite posicionar la imagen sin afectar el contenido */
+            top: 700px; /* Ajuste vertical */
+            right: 80px; /* Ajuste horizontal */
+            width: 150px; /* Tamaño de la imagen */
+            height: 150px;
+            background-image: url('img/circuit-board.png'); /* Ruta de la imagen */
+            background-size: contain; /* La imagen mantiene su proporción */
+            background-repeat: no-repeat; /* No repite la imagen */
+            opacity: 0.3; /* Opcional: Agrega transparencia para un efecto sutil */
+            pointer-events: none; /* Evita que la imagen interfiera con el contenido */
+}
+
+@media (max-width: 768px) {
+    .about-section::before {
+        top: 670px; /* Ajuste vertical */
+            right: 20px; /* Ajuste horizontal */
+            width: 80px; /* Tamaño de la imagen */
+            height: 80px;
+    }
+}
+
+
+.about-section p {
+    font-size: 1rem;
+    color: var(--color-secundario);
+    max-width: 800px;
+    margin: 0 auto 40px; /* Centrado horizontalmente */
+	text-align: justify;
+}
+
+.about-section h2{
+	color:var(--color-primario);
+}
+
+/* Contenedor de cuadrícula */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Distribuye uniformemente sin espacios vacíos */
+    gap: 30px; /* Espacio entre tarjetas */
+    align-items: stretch; /* Asegura que las tarjetas se alineen bien en altura */
+}
+
+/* Estilo de las tarjetas */
+.about-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.about-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.about-card h3 {
+    color: var(--color-advertencia);
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.about-card p {
+    color: var(--color-secundario);
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+	
+}
+
+/* Animación de icono */
+.about-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--color-primario);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.about-card:hover .about-icon {
+    color: var(--color-primario);
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño del icono */
+}
+
+
+
+
+
+
+
+/* Sección Servicios - Diseño elegante y profesional */
+
+.services-section {
+    background: var(--color-fondo);
+    padding: 60px 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    margin: 60px 0;
+}
+
+.services-section h2{
+	color:var(--color-primario);
+}
+
+
+/* Diseño de cuadrícula dinámico */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+/* Estilo de las tarjetas */
+.service-card {
+    background: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Hover con elevación y sombra */
+.service-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo del ícono o imagen dentro de las tarjetas */
+.service-card::before {
+    content: attr(data-icon); /* Usa el valor de 'data-icon' como contenido */
+    font-size: 3.5rem;
+    color: var(--color-primario);
+    display: block;
+    margin-bottom: 15px;
+    transition: color 0.3s;
+}
+
+.service-card:hover::before {
+    color: var(--color-hover);
+}
+
+/* Títulos de las tarjetas */
+.service-card h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: var(--color-advertencia);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Texto más compacto y claro */
+.service-card p {
+    font-size: 0.9rem;
+    color: var(--color-secundario);
+    line-height: 1.5;
+    margin-top: 8px;
+}
+
+/* Efecto responsivo */
+@media (max-width: 768px) {
+    .services-section {
+        padding: 50px 15px;
+    }
+    .service-card {
+        padding: 15px;
+    }
+}
+
+/* Estilo de la imagen o ícono en cada tarjeta */
+.service-icon {
+    width: 80px;
+    height: 80px;
+    object-fit: contain; /* Asegura que la imagen se ajuste bien sin distorsión */
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1); /* Pequeño zoom al hacer hover */
+}
+
+
+
+
+/* Sección Casos de Exito */
+.casos{
+	background-color: #ffffff;
+	padding: 5%;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin: 40px;
+    padding: 10px;
+	padding: 0;
+	margin: 0;
+}
+
+/* Tarjetas de Caso de Estudio */
+.caso-estudio {
+    background-color: linear-gradient(180deg, #FFFFFF 0%, #F0F4F5 100%);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.caso-estudio:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen en la tarjeta */
+.caso-estudio img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Contenedor de detalles */
+.caso-estudio h3 {
+    font-size: 1rem;
+    margin: 15px;
+    color:var(--color-primario);
+    text-align: center;
+}
+
+
+
+.detalles {
+    padding: 15px;
+    /*display: none;*/
+    font-size: 1rem;
+    color: var(--color-secundario);
+    line-height: 1.6;
+}
+
+.detalles a {
+	color:var(--color-advertencia);
+	text-decoration: none;
+}
+
+/* Efecto de animación para mostrar/ocultar detalles */
+.caso-estudio .detalles.show {
+    display: block;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Animación de aparición suave */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+
+
+
+
+
+/* Sección de clientes */
+#clientes {
+    display: flex; /* Utiliza el modelo de caja flexible (flexbox) para organizar los elementos dentro del contenedor */
+    justify-content: center; /* Centra los elementos hijos horizontalmente */
+    gap: 20px; /* Espacio de 20 píxeles entre los elementos hijos */
+	padding: 0;
+	margin: 0;
+}
+
+/* Tarjetas de cliente */
+.cliente-card {
+    background-color: transparent; /* Establece un fondo transparente para las tarjetas */
+    width: 100px; /* Ancho fijo de 100 píxeles para cada tarjeta */
+    text-align: center; /* Centra el texto dentro de la tarjeta */
+	
+}
+
+/* Logo del cliente */
+.cliente-logo {
+    max-width: 100%; /* Hace que la imagen del logo no exceda el ancho del contenedor padre */
+    height: auto; /* Mantiene la proporción de la imagen al ajustar su altura automáticamente */
+}
+
+/* Responsivo */
+@media (max-width: 768px) { /* Estilos aplicables para pantallas con un ancho máximo de 768 píxeles */
+    #clientes {
+        flex-direction:column; /* Cambia la dirección de los elementos a columna en pantallas más pequeñas */
+        align-items: center; /* Centra los elementos hijos verticalmente */
+    }
+
+    .cliente-card {
+        width: 35%; /* Aumenta el ancho de las tarjetas al 90% del contenedor en pantallas pequeñas */
+    }
+}
+
+
+
+/* Sección de Contacto Moderna */
+.contact-modern {
+    background-image: url('img/contacto.jpg');/* Fondo degradado suave */
+	background-size: cover;
+	background-position: center;
+
+	background-color: background-color: rgba(51, 51, 51, 0.5); 
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+/* Contenedor principal del formulario */
+.contact-container {
+    background: rgba(255, 255, 255, 0.9); /* Fondo blanco con transparencia */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    padding: 60px;
+	margin: 10%;
+    border-radius: 16px;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Encabezado de la sección */
+.contact-content h2 {
+    font-size: 2rem;
+    color: var(--color-secundario);
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.contact-content p {
+    font-size: 1rem;
+    color: var(--color-secundario);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Formulario */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    background: transparent;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus,
+.input-group select:focus,
+.input-group textarea:focus {
+    border-bottom-color: var(--color-primario);
+    outline: none;
+}
+
+/* Botón */
+.btn-submit {
+    background-color: var(--color-advertencia);
+    color: var(--color-secundario);
+    border: none;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-hover);
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 40px 20px;
+    }
+
+    .contact-content h2 {
+        font-size: 1.8rem;
+    }
+}
+
+
+
+/* Estilo del Footer */
+.main-footer {
+    background-color: var(--color-secundario); /* Color de fondo oscuro para el footer */
+    color: white; /* Color del texto en blanco para contrastar con el fondo oscuro */
+    text-align: center; /* Centra el texto en el footer */
+    padding: 20px 0; /* Espaciado interno vertical para el footer */
+}
+
+/* Estilo para los botones de selección de idioma */
+.language-selector {
+    display: flex; /* Utiliza flexbox para alinear los botones horizontalmente */
+    align-items: center; /* Alinea verticalmente los botones en el centro */
+    margin-left: 20px; /* Espacio a la izquierda de los botones */
+}
+
+/* Estilo para los botones dentro del selector de idioma */
+.language-selector button {
+    background-color: transparent; /* Fondo transparente para el botón */
+    color: white; /* Color del texto en blanco para mayor contraste */
+    border: 2px solid white; /* Borde blanco para los botones */
+    padding: 10px 15px; /* Espaciado interno del botón */
+    border-radius: 5px; /* Bordes redondeados para los botones */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón sobre el botón */
+    font-weight: bold; /* Aplica negrita al texto para mayor énfasis */
+    display: flex; /* Utiliza flexbox para alinear el icono y el texto dentro del botón */
+    align-items: center; /* Centra el contenido del botón verticalmente */
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para el fondo y color del texto */
+    margin: 0 5px; /* Espacio horizontal entre los botones */
+}
+
+/* Estilo para el efecto hover en los botones de selección de idioma */
+.language-selector button:hover {
+    background-color: white; /* Cambia el fondo a blanco al pasar el ratón sobre el botón */
+    color: var(--color-secundario); /* Cambia el color del texto a negro en hover */
+}
+
+/* Estilo para los iconos de bandera en el selector de idioma */
+.flag-icon {
+    width: 20px; /* Ancho fijo para los iconos de bandera */
+    height: auto; /* Mantiene la proporción de la bandera */
+    margin-right: 5px; /* Espacio entre la bandera y el texto dentro del botón */
+}
+
+
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) { /* Se aplica este estilo a pantallas con un ancho máximo de 768px */
+    
+    .navbar {
+        flex-direction: column; /* Cambia la dirección de la barra de navegación a columna */
+        align-items: flex-start; /* Alinea los elementos de la navbar al inicio (izquierda) */
+    }
+
+    .service-card,
+    .portfolio-item {
+        flex-basis: 80%; /* Ajusta el ancho de las tarjetas de servicio y los elementos del portafolio al 80% en pantallas pequeñas */
+    }
+
+    .mobile-menu {
+        display: block; /* Muestra el menú móvil en pantallas pequeñas */
+    }
+
+    .nav-links {
+        display: none; /* Oculta el menú de navegación por defecto en pantallas pequeñas */
+        flex-direction: column; /* Alinea los enlaces de navegación verticalmente */
+        position: absolute; /* Posiciona el menú de forma absoluta para que no afecte el flujo del documento */
+        top: 60px; /* Ajusta la posición desde la parte superior */
+        right: 20px; /* Alineación del menú a la derecha */
+        background-color: var(--color-secundario); /* Color de fondo del menú */
+        padding: 10px; /* Espaciado interno del menú */
+        border-radius: 5px; /* Bordes redondeados del menú */
+        z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+    }
+
+    .nav-links.active {
+        display: flex; /* Muestra el menú en modo flex cuando está activo */
+        flex-direction: column; /* Alinea los elementos verticalmente */
+        position: absolute; /* Posición absoluta para desplegar el menú */
+        top: 60px; /* Ajusta según el tamaño del navbar */
+        right: 20px; /* Alineación del menú */
+        background-color: var(--color-secundario); /* Fondo del menú */
+        padding: 10px; /* Espaciado interno */
+        border-radius: 5px; /* Bordes redondeados */
+        z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    }
+
+    .header-content {
+        margin-top: 150px; /* Espacio entre el contenido del header y el menú */
+        text-align: center; /* Centra el texto dentro de la sección de contenido del header */
+    }
+
+    .language-selector {
+        display: flex; /* Utiliza flexbox para el selector de idiomas */
+        align-items: center; /* Centra los botones verticalmente */
+        gap: 5px; /* Espacio entre los botones del selector de idioma */
+    }
+
+    .language-selector button {
+        background-color: transparent; /* Fondo transparente para los botones */
+        color: white; /* Color del texto en blanco */
+        border: 2px solid white; /* Borde blanco para los botones */
+        padding: 10px 15px; /* Espaciado interno de los botones */
+        border-radius: 5px; /* Bordes redondeados para los botones */
+        cursor: pointer; /* Cambia el cursor al pasar el ratón sobre los botones */
+        font-weight: bold; /* Hace que el texto sea más grueso para mayor énfasis */
+        display: flex; /* Flex para alinear el icono y el texto en el botón */
+        align-items: center; /* Centra el contenido verticalmente en el botón */
+        transition: background-color 0.3s, color 0.3s; /* Transición suave para el fondo y el color del texto */
+        width: 100%; /* Opcional: Asegura que el botón ocupe todo el ancho disponible */
+    }
+
+    .language-selector button:hover {
+        background-color: white; /* Cambia el fondo a blanco al pasar el ratón sobre el botón */
+        color: var(--color-secundario); /* Cambia el color del texto a negro al hacer hover */
+    }
+
+    .flag-icon {
+        width: 20px; /* Establece el ancho de la bandera */
+        height: auto; /* Mantiene la proporción de la bandera */
+        margin-right: 5px; /* Espacio entre la bandera y el texto del botón */
+    }
+}
+
+
+/* Botón de Subir Moderno (Versión Compacta) */
+.btn-subir {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 41px; /* Alinear la flecha */
+    font-size: 24px; /* Tamaño de la flecha más pequeño */
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    display: none; /* Oculto por defecto */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+/* Efecto al pasar el cursor */
+.btn-subir:hover {
+    background-color: var(--color-secundario);
+    color: white;
+    transform: scale(1.1); /* Ligero zoom */
+    border-color: var(--color-secundario);
+}
+
+/* Flecha dentro del botón */
+.btn-subir span {
+    display: inline-block;
+    transform: translateY(-1px); /* Mejor alineación */
+}
+
+
+
+
+
+
+
+
+
+
+/* Encapsula los estilos solo para la línea del tiempo */
+#timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px 0;
+    overflow: hidden;
+}
+
+.timeline-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Contenedor de la línea del tiempo */
+.timeline-container {
+    position: relative;
+    padding: 10px 0;
+	
+}
+
+/* Línea vertical continua */
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 50%; /* Línea centrada */
+    top: 0;
+    width: 4px;
+    height: 10000%; /* Abarca toda la altura */
+    background: linear-gradient(to bottom, #669999, #333333); /* Gradiente de colores */
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/* Puntos en la línea */
+.point {
+    position: absolute;
+    left: 50%; /* Centra los puntos sobre la línea */
+    width: 12px;
+    height: 12px;
+    background-color: #007bff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+/* Eventos alternados: uno a la izquierda, otro a la derecha */
+.event {
+    position: relative;
+    width: 45%; /* Cada evento ocupa el 45% del ancho */
+    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Alterna los eventos: unos a la izquierda, otros a la derecha */
+.event-left {
+    float: left;
+    text-align: right;
+    clear: both;
+}
+
+.event-right {
+    float: right;
+    text-align: left;
+    clear: both;
+}
+
+/* Encabezados e información */
+.event h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #669999;
+}
+
+.event p {
+    margin: 5px 0;
+    max-height: 80px; /* Limita la altura del párrafo */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.event small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #FF6600;
+}
+
+/* Espaciado correcto de puntos y eventos para móviles */
+@media (max-width: 768px) {
+    .event {
+        width: 100%; /* Eventos ocupan todo el ancho */
+        text-align: center;
+    }
+
+    .timeline-container::before {
+        left: 25px; /* Línea más a la izquierda en móviles */
+    }
+
+    .point {
+        left: 25px; /* Puntos alineados con la línea */
+    }
+}
+
+
+
+/*<--------Empieza Linea del Tiempo--------->*/
+        .timeline{
+            position:relative;
+            margin:50px auto;
+            padding:40px 0;
+            width:99%;
+            box-sizing:border-box;
+        }
+        /*linea intermedia*/
+        .timeline:before{
+            content:'';
+            position:absolute;
+            left:50%;
+            width:2px;
+            height:100%;
+            background: linear-gradient(to bottom, #669999, #333333); /* Gradiente de colores */
+        }
+        /*termina linea intermedia*/
+        .timeline ul{
+            margin:0;
+            padding:0;
+        }
+        .timeline ul li{
+            list-style:none;
+            position:relative;
+            width:50%;
+            padding:20px 40px;
+            box-sizing:border-box;
+        }
+       /*posicion apartir del circulo*/
+        .timeline ul li:nth-child(odd){
+            float: left;
+            text-align:right;
+            clear:both;
+        }
+        .timeline ul li:nth-child(even){
+            float: right;
+            text-align:left;
+            clear:both;
+       }
+        .content{
+            padding-bottom:20px;
+        }
+	
+	
+        /*circulo naranja medio 
+	
+		lado derecho */
+        .timeline ul li:nth-child(odd):before{
+            content:'';
+            position:absolute;
+            top:24px;
+            right:-6px;
+            width:10px;
+            height:10px;
+            background: #FF6600;
+            border-radius:50%;
+            box-shadow: 0 0 0 3px rgba(27, 152, 206,0.2);
+        }
+	
+		/*lado izquierdo */
+        .timeline ul li:nth-child(even):before{
+            content:'';
+            position:absolute;
+            top:24px;
+            left:-4px;
+            width:10px;
+            height:10px;
+            background: #FF6600;
+            border-radius:50%;
+            box-shadow: 0 0 0 3px rgba(27, 152, 206,0.2);
+        }
+        /* termino circulo medio*/
+	
+	
+        .timeline ul li h3 {
+            margin:0;
+            padding:0;
+            font-weight:600;
+            color:#669999;
+			font-family: 'Arial', sans-serif;
+			font-size: 1rem;
+        }
+        .timeline ul li p {
+            margin:10px 0 0;
+            padding:0;
+			font-family: 'Arial', sans-serif;
+			font-size: 1rem;
+			color: #333333;
+			
+        }
+        .timeline ul li .time h4{
+            margin:0;
+            padding:0;
+            font-size:14px;
+        }
+        /*fecha*/
+        .timeline ul li:nth-child(odd) .time {
+            position:absolute;
+            top:12px;
+            right:-190px;
+            margin:0;
+            padding:8px 16px;
+            background:none;
+            color: #FF6600;
+            /*border-radius:18px;
+            box-shadow:0 0 0 3px rgba(27, 152, 206,0.3);*/
+        }
+        .timeline ul li:nth-child(even) .time {
+            position:absolute;
+            top:12px;
+            left:-185px;
+            margin:0;
+            padding:8px 16px;
+            background:none;
+            color: #FF6600;
+            /*border-radius:18px;
+            box-shadow:0 0 0 3px rgba(27, 152, 206,0.3);*/
+        }
+        /*termino anio/
+        <--------Termina Linea del Tiempo--------->*/
+
+		/* Oculto por defecto */
+.service-card .detalles,
+.caso-estudio .detalles {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 1rem;              /* padding lateral siempre */
+}
+
+/* Al hacer click, mostramos el contenido */
+.service-card .detalles.show,
+.caso-estudio .detalles.show {
+  max-height: 500px;            /* ajusta este valor según el contenido máximo */
+  padding: 0.75rem 1rem;        /* añade padding vertical al desplegar */
+}
