@@ -1,14 +1,4 @@
 <?php
-// ————————————— Seguridad: Headers HTTP —————————————
-header("Strict-Transport-Security: max-age=31536000; includeSubDomains; preload");
-header("X-Frame-Options: DENY");
-header("X-Content-Type-Options: nosniff");
-header("Referrer-Policy: same-origin");
-header("Content-Security-Policy: default-src 'self'; script-src 'self' https://www.googletagmanager.com https://www.google.com https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://www.google.com; frame-src 'self' https://www.google.com;");
-header("Cache-Control: public, max-age=31536000");
-
-// ————————————— API AJAX / Form handling —————————————
-
 if (
     $_SERVER['REQUEST_METHOD'] === 'POST'
     && isset($_SERVER['HTTP_X_REQUESTED_WITH'])
@@ -37,16 +27,6 @@ if (
     if (!$valid) {
         $response['message'] = 'Por favor, verifica que no eres un robot.';
     } else {
-		
-		// Inserta aquí este bloque de validación antes de mail():
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $response['message'] = 'Correo inválido.';
-        echo json_encode($response);
-        exit;
-    }
-    $name = preg_replace("/[\r\n]+/", " ", trim($name));
-
-		
         // 3. Enviar correo
         $to      = 'technomoon1@gmail.com';
         $subject = "Nuevo mensaje de contacto de $name";
@@ -70,8 +50,7 @@ if (
 <html lang="es">
 <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3BT38L0EP" integrity="sha384-XXXX"
-        crossorigin="anonymous"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H3BT38L0EP"></script>
     <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -81,41 +60,25 @@ if (
     <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Techno-Moon – Soluciones en TI y Telecomunicaciones</title>
-	<link rel="canonical" href="https://techno-moon.com<?=htmlspecialchars($_SERVER['REQUEST_URI'])?>">
-	<meta name="keywords" content="TI, telecomunicaciones, cctv, redes, cableado, soporte técnico, diseño web">
+	<meta name="description" content="Techno-Moon - Servicios de TI y telecomunicaciones para empresas, incluyendo redes, cableado estructurado y soporte técnico.">
+	<meta name="keywords" content="Techno-Moon, TI, telecomunicaciones, soporte técnico, redes, cableado estructurado">
 	<meta name="author" content="Techno-Moon">
 	<meta property="og:title" content="Techno-Moon - Soluciones en TI y Telecomunicaciones">
 	<meta property="og:description" content="Redes, cableado estructurado y soporte técnico para empresas.">
 	<meta property="og:image" content="img/logo.png">
 	<meta property="og:url" content="https://technomoon.com">
 	<meta name="twitter:card" content="summary_large_image">
-	
-	 <!-- JSON‑LD Organisation -->
-    <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"Organization",
-      "name":"Techno-Moon",
-      "url":"https://techno-moon.com",
-      "logo":"https://techno-moon.com/img/logo.png"
-    }
-    </script>
-	
-	<!-- Fuentes + CSS -->
-    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
-	<noscript><link rel="stylesheet" href="styles.css"></noscript>
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" as="style">
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Techno-moon</title>
+    <link rel="stylesheet" href="styles.css">
+	<link rel="preload" href="styles.css" as="style">
+	<link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins&display=swap" as="style">
 	<link rel="preload" href="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" as="script">
 	<link rel="preload" href="img/logo.png" as="image">
 	<link rel="icon" href="img/logo.png" type="image/x-icon">
 	<link rel="icon" sizes="32x32" href="img/favicon-32x32.png" type="image/png">
 	<link rel="apple-touch-icon" href="img/favicon-apple.png">
-	
-	
-	<!-- reCAPTCHA -->
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+	<!-- Añade esto justo antes de </head> -->
 	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script defer src="scripts.js"></script>
 </head>
@@ -126,7 +89,7 @@ if (
         <div id="particles-js"></div>
         <nav class="navbar" role="navigation">
             <a href="#" class="logo">
-                <img src="img/logo.png" alt="Logo de Techno-moon" class="logo-img" loading="lazy">
+                <img src="img/logo.png" alt="Logo de Techno-moon" class="logo-img">
             </a>
 			 <div class="mobile-menu" id="mobile-menu" aria-expanded="false">☰</div>
             <ul class="nav-links" id="nav-links">
@@ -137,10 +100,10 @@ if (
             </ul>
             <div class="language-selector">
                 <button id="lang-en" onclick="changeLanguage('en')" aria-label="Cambiar a inglés">
-                    <img src="img/Idioma/en.png" alt="English" class="flag-icon" loading="lazy"> EN
+                    <img src="img/Idioma/en.png" alt="English" class="flag-icon"> EN
                 </button>
                 <button id="lang-es" onclick="changeLanguage('es')" aria-label="Cambiar a Español">
-                    <img src="img/Idioma/es.png" alt="Español" class="flag-icon" loading="lazy"> ES
+                    <img src="img/Idioma/es.png" alt="Español" class="flag-icon"> ES
                 </button>
             </div>
         </nav>
@@ -218,8 +181,8 @@ if (
         <?php
 		  $host = 'localhost';
 		  $dbname = 'technomo_techno-moon';
-		  $username = 'root';
-		  $password = '';
+		  $username = 'technomo_techno-moon';
+		  $password = 'ga#uyupreMefrer6';
 
 			try {
 				$conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
@@ -235,7 +198,7 @@ if (
         foreach ($clientes as $cliente) {
             echo "
                 <div class='cliente-card'>
-                    <img src='logos/{$cliente['img']}' alt='{$cliente['empresa']}' class='cliente-logo' loading='lazy'>
+                    <img src='logos/{$cliente['img']}' alt='{$cliente['empresa']}' class='cliente-logo'>
                 </div>
             ";
         }
@@ -260,7 +223,7 @@ if (
             <!-- justo antes del form -->
             <div id="formMessage"></div>
             
-			<form id="contactForm" method="POST" class="contact-form">
+			<form id="contactForm" action="contact.php" method="POST" class="contact-form">
 				<div class="input-group">
 					<input data-es="Nombre Completo" data-en="Full Name" 
 						   type="text" id="name" name="name" 
